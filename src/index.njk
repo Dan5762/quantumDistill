@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/style.css">
+
+<div class="header">
+  <h2>Quantum Distill</h2>
+</div>
+
+<div class="row">
+  {% for article in articles.articles %}
+    <a style="text-decoration: none" href={{article.url}}>
+      <div class="card">
+        <h2>{{article.title}}</h2>
+        <h5>{{article.description}}</h5>
+        <h6>
+          {% for author in article.authors %}
+            {{author.author}},
+          {% endfor %}
+        </h6>
+        <h6>{{article.date}}</h6>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+</html>
